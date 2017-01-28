@@ -1,0 +1,1 @@
+create index IX_EBE646E5 on employee_detail (employeeId);

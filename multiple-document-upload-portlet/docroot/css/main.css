@@ -1,0 +1,1921 @@
+/** show liferay loading Text **/
+
+.loadingmask-message {
+    top: 50% !important;
+    position: fixed !important;
+    ;
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/Roboto-Regular-webfont.eot');
+    src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-Regular-webfont.woff') format('woff'), url('../fonts/Roboto-Regular-webfont.ttf') format('truetype'), url('../fonts/Roboto-Regular-webfont.svg#roboto') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto-bold';
+    src: url('../fonts/Roboto-Bold-webfont.eot');
+    src: url('../fonts/Roboto-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-Bold-webfont.woff') format('woff'), url('../fonts/Roboto-Bold-webfont.ttf') format('truetype'), url('../fonts/Roboto-Bold-webfont.svg#roboto-bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto-light';
+    src: url('../fonts/roboto-light-webfont.ttf') format('truetype'), url('../fonts/roboto-light-webfont.woff2') format('woff2'), url('../fonts/roboto-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto-thin';
+    src: url('../fonts/Roboto-Thin-webfont.eot');
+    src: url('../fonts/Roboto-Thin-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/Roboto-Thin-webfont.woff') format('woff'), url('../fonts/Roboto-Thin-webfont.ttf') format('truetype'), url('../fonts/Roboto-Thin-webfont.svg#roboto-light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'robotomedium';
+    src: url('../fonts/roboto-medium-webfont.eot');
+    src: url('../fonts/roboto-medium-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/roboto-medium-webfont.woff2') format('woff2'), url('../fonts/roboto-medium-webfont.woff') format('woff'), url('../fonts/roboto-medium-webfont.ttf') format('truetype'), url('../fonts/roboto-medium-webfont.svg#robotomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ------------------------------- 1. CSS Reset ------------------------------- */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    font-size: 100%;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+caption,
+th,
+td {
+    text-align: left;
+    font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+}
+
+html {
+    overflow-y: scroll;
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    line-height: 1;
+    font-family: 'robotomedium';
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+
+del {
+    color: #333;
+}
+
+ins {
+    background: #fff9c0;
+    text-decoration: none;
+}
+
+hr {
+    margin: 24px;
+    margin-bottom: 1.714285714rem;
+    height: 1px;
+    border: 0;
+    background-color: #b3b3b1;
+}
+
+sub,
+sup {
+    position: relative;
+    vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+img {
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+
+/* ---------- END CSS Reset ---------- */
+
+
+/*------------------------------- 2. Basic Typography ------------------------------- */
+
+body {
+    color: #777777;
+    font-size: 14px;
+    font-family: 'roboto' !important;
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3399cc;
+    text-decoration: none;
+}
+
+hr {
+    margin: 5px 0;
+    height: 1px;
+    border: 0;
+    background-color: #b3b3b1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 10px 0;
+    color: #333332;
+    font-weight: 100;
+    font-family: Montserrat, 'Open Sans', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: inherit;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+h4 {
+    font-size: 19px;
+}
+
+h5 {
+    font-size: 17px;
+}
+
+h6 {
+    font-size: 15px;
+}
+
+p {
+    margin: 7px 0;
+    padding: 0;
+}
+
+ol {
+    margin-left: 20px;
+    list-style-type: decimal;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+dl {
+    margin-left: 20px;
+}
+
+dt {
+    font-weight: bold;
+}
+
+small {
+    font-size: 85%;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+cite {
+    font-style: normal;
+    font-size: 110%;
+}
+
+q {
+    font-style: italic;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.mainBody .row {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+}
+
+.col40 {
+    width: calc(40% - 30px);
+    padding: 0px 15px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.col50 {
+    width: calc(50% - 30px);
+    padding: 0px 15px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.col60 {
+    width: calc(60% - 30px);
+    padding: 0px 15px;
+    float: left;
+    margin-bottom: 15px;
+}
+.col75 {
+    width: calc(100% - 30px);
+    padding: 0px 15px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.col3 {
+    width: calc(25% - 30px);
+    padding: 0px 15px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.col100 {
+    width: calc(100% - 30px);
+    padding: 0px 15px;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.mainBody .container {
+    max-width: unset !important;
+    width: 100% !important;
+    margin: 0px auto;
+}
+
+.banner img {
+    width: 100%;
+}
+
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+/* Float the list items side by side */
+
+ul.tab li {
+    float: left;
+    margin-right: 10px;
+    background: #e5e5e5;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+}
+
+
+/* Style the links inside the list items */
+
+ul.tab li a {
+    color: #515151;
+    display: inline-block;
+    font-size: 16px;
+    min-width: 120px;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+
+/* Change background color of links on hover */
+
+ul.tab li a:hover {
+    background-color: #ddd;
+}
+
+
+/* Create an active/current tablink class */
+
+ul.tab li a:focus,
+.mainBody a.active {
+    background-color: #0087be;
+    color: #fff !important;
+}
+
+
+/* Style the tab content */
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+}
+
+.mainDiv {
+    padding: 20px;
+}
+
+.inputBox.inline {
+    display: inline-block;
+    margin-right: 15px;
+    width: calc(50% - 18px);
+    vertical-align: top;
+}
+.bgcolor .inputBox.inline {
+    display: inline-block;
+    margin-right: 15px;
+    width: calc(33.33% - 18px);
+    vertical-align: top;
+}
+.inputBox.block {
+    display: block;
+}
+
+.mainBody input[type='text'] {
+    border: 1px solid #c8c8c8 !important;
+    border-radius: 4px !important;
+    height: 24px !important;
+    padding: 4px 12px 6px !important;
+    width: calc(100% - 20px) !important;
+}
+
+.mainBody textarea {
+    border: 1px solid #c8c8c8 !important;
+    border-radius: 4px !important;
+    padding: 4px 12px 6px !important;
+    width: calc(100% - 20px) !important;
+    display: block !important;
+}
+
+.select2-selection {
+    border: 1px solid #c8c8c8;
+    border-radius: 4px;
+    max-width: 350px;
+    padding: 0px 0px;
+    width: 100%;
+    margin-bottom: 7px;
+    min-height: 36px !important;
+    z-index: 1000;
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+    margin-top: 0px !important;
+    height: 26px;
+}
+
+.select2 {
+    width: 100% !important;
+}
+
+.select2-selection__choice {
+    margin-top: 0px !important;
+}
+
+.clear {
+    clear: both;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.grid-list-box a i,
+.mainBody .grid-list-box a:hover i {
+    font-size: 32px;
+    color: #515151;
+    padding-right: 10px;
+    margin-top: 15px;
+}
+
+.grid-list-box a.disabled i {
+    color: #bababa;
+}
+
+.grid-list-box a.disabled:hover i {
+    color: #515151;
+}
+
+.searchDiv {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.searchDiv a.searchBtn {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.searchDiv a.resetBtn {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.searchDiv a.resetBtn i {
+    color: #cc0404;
+}
+
+.searchDiv a i {
+    color: #0087bf;
+    font-size: 18px;
+}
+
+.advancesearch {
+    font-size: 13px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    color: #515151;
+}
+
+.reset {
+    font-size: 13px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: #515151
+}
+
+.table-div {
+    padding-top: 45px;
+    margin-top: -45px !important;
+}
+
+.mainBody .table {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1rem !important;
+    border-radius: 0px !Important;
+}
+
+.mainBody .table a {
+    color: #0087be !important;
+}
+
+.mainBody table {
+    border-collapse: collapse !important;
+    background-color: transparent !important;
+}
+
+.mainBody thead {
+    display: table-header-group !important;
+    vertical-align: middle !important;
+    border-color: inherit !important;
+    background: #3398cc !important;
+}
+
+.mainBody thead th {
+    background-color: transparent !important;
+}
+
+.mainBody tbody {
+    display: table-row-group !important;
+    vertical-align: middle !important;
+    border-color: inherit !important;
+}
+
+.mainBody tr {
+    vertical-align: inherit !important;
+    border-color: inherit !important;
+}
+
+.mainBody .table td,
+.table th {
+    padding: .75rem !important;
+    vertical-align: top !important;
+    border-top: 1px solid #eceeef !important;
+}
+
+
+/*.mainBody .table td:first-child div{white-space:nowrap !important;max-width:300px !important;overflow:hidden !important;text-overflow:ellipsis !important;}
+ .mainBody .table td{white-space:nowrap !important;max-width:150px !important;overflow:hidden !important;text-overflow:ellipsis !important;}*/
+
+.mainBody th {
+    text-align: left !important;
+    color: #fff !important;
+    vertical-align: middle !important;
+}
+
+.mainBody .table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, .05) !important;
+}
+
+.mainBody .table-bordered th {
+    border: 1px solid #f7f7f7 !important;
+}
+
+.mainBody .table-bordered td {
+    border: 1px solid #e7e7e7 !important;
+    text-align: center !important;
+}
+
+.mainBody .actions a i {
+    color: #515151;
+    padding: 0px 3px !important;
+}
+
+.mainBody .actions a:hover i {
+    color: #3398cc !important;
+}
+
+.advancesearchdiv {
+    background: #f2f2f2 none repeat scroll 0 0;
+    margin: 0 15px;
+    padding: 10px 0;
+    display: none;
+}
+
+.btn {
+    padding: 5px 10px;
+    border-radius: 5px !important;
+    border: none !important;
+    max-width: 50px !important;
+    display: block;
+}
+
+.btn.btn-blue {
+    background: #0087be;
+    color: #fff;
+    font-size: 16px;
+}
+
+.table_option {
+    float: left;
+    margin-bottom: -1px;
+    margin-top: 10px;
+    width: 100%;
+    position: relative;
+    z-index: 99;
+}
+
+.table_option a {
+    background: #333 none repeat scroll 0 0;
+    border-radius: 8px 8px 0 0;
+    color: #fff !important;
+    font-size: 18px;
+    padding: 9px 8px;
+    float: left;
+    position: relative;
+    z-index: 999;
+}
+
+.table_option .inline select {
+    position: relative;
+    z-index: 999999999999999;
+}
+
+.moreOption {
+    float: left;
+    margin-left: 10px;
+    padding-top: 5px;
+    display: none;
+    width: calc(100% - 41px);
+}
+
+.mainBody .dataTables_wrapper .dataTables_paginate .paginate_button,
+.light-theme li a,
+.light-theme li span {
+    border-radius: 5px !important;
+    display: inline-block !important;
+    align-contentheight: 20px !important;
+    padding: 3px 11px 6px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    align-contentwidth: 20px !important;
+    background: #f5f5f5 !important;
+    color: #333 !important;
+    box-shadow: none;
+    border: none;
+}
+
+.mainBody .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.light-theme span.current {
+    background: #3697ca !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+#addTitleAccordionAction {
+    text-align: right;
+    color: #333 !important;
+}
+
+#addTitleAccordionAction a {
+    display: inline-block;
+    margin: 0px 8px;
+    color: #333 !important;
+}
+
+#addTitleAccordionAction a:hover {
+    color: #0087be !important;
+}
+
+#adminAccordionAction{
+	text-align: right;
+    color: #333 !important;
+}
+
+#adminAccordionAction a{
+	display: inline-block;
+    margin: 0px 8px;
+    color: #333 !important;
+}
+
+#adminAccordionAction a:hover {
+    color: #0087be !important;
+}
+
+.plusIcon {
+    display: block;
+    font-size: 28px;
+    text-align: center;
+    width: 100%;
+    color: #0087be !important;
+}
+
+.uploaderinput>span {
+    display: inline-block;
+    height: 25px;
+    padding-top: 2px;
+    position: absolute;
+    right: -2px;
+    text-align: center;
+    top: 8px;
+    vertical-align: middle;
+    width: 25px;
+}
+
+.uploaderinput {
+    position: relative;
+}
+
+.mainuploader {
+    opacity: 0;
+    position: absolute;
+    right: -5px !important;
+    width: 30px !important;
+    z-index: 999;
+}
+
+.mainuploader:hover {
+    cursor: pointer;
+}
+
+.table a.cancleIcon {
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    color: #cc0404 !important;
+}
+
+.table a.refreshIcon {
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+}
+
+.ui-accordion .ui-accordion-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.addFileBtn {
+    background: #f1f1f1 none repeat scroll 0 0;
+    height: 65px;
+    margin-top: 10px;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    width: calc(100% -40);
+}
+
+.addFileBtn .fullBtn {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    opacity: 0;
+}
+
+.addFileBtn i {
+    font-size: 52px;
+    color: #c3c3c3;
+}
+
+.addFileBtn span {
+    display: block;
+    color: #333;
+    font-size: 14px;
+}
+
+input[type="button"]:hover {
+    cursor: pointer;
+}
+
+.btnsrow {
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background: #0087be !important;
+    max-width: 500px !important;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+}
+
+.btn-default {
+    min-width: 80px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: none;
+}
+
+.downlaod i {
+    float: right;
+    font-size: 28px;
+    margin-top: 5px;
+}
+
+.hr {
+    width: 100%;
+    height: 1px;
+    display: block;
+    background: #e7e7e7;
+    margin-bottom: 15px;
+}
+
+.checkboxcustom {
+    margin-bottom: 10px;
+}
+
+.checkboxcustom,
+.checkboxcustom input {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#dialog,
+#dialog2 {
+    display: none;
+}
+
+.ui-dialog.gridPopup .ui-dialog-titlebar,
+.ui-dialog.listPopup .ui-dialog-titlebar {
+    border: none;
+    background: none;
+}
+
+.ui-dialog.gridPopup .ui-dialog-title,
+.ui-dialog.listPopup .ui-dialog-title {
+    display: none;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    background: #333 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 50px;
+    height: 25px;
+    margin: 0;
+    padding: 1px;
+    position: absolute;
+    right: -13px;
+    top: -15px;
+    width: 25px;
+    z-index: 9999;
+}
+
+.listPopup.ui-dialog {
+    border: 2px solid #0087be !important;
+    max-width: 95% !important;
+}
+
+.ui-dialog {
+    z-index: 9999999999;
+}
+
+.ui-dialog .profile h3 {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+#publicationDetailAccordionAction {
+    text-align: right;
+}
+
+
+
+.posRel {
+    position: relative;
+}
+
+.resetfilter {
+    position: absolute;
+    right: 7px;
+    top: 55px;
+    color: #0087be;
+    font-size: 20px;
+}
+
+.gridView {
+    clear: both;
+    display: none;
+}
+
+.gridView .innerDetail {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 280px;
+    margin-bottom: 15px;
+}
+
+.gridView .innerDetail:hover {
+    cursor: pointer;
+}
+
+.gridView .innerDetail img {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    transition: all 1s ease;
+}
+
+.gridView .innerDetail:hover img {
+    transform: scale(1.2);
+    transition: all 1s ease;
+}
+
+.gridView .innerDetail.vImg img {
+    height: 100%;
+    width: auto;
+    max-width: unset;
+    left: -50%;
+    right: 50%;
+    margin-left: 50%;
+}
+
+.gridView .innerDetail.hImg img {
+    height: auto;
+    width: 100%;
+    max-width: unset;
+}
+
+.gridView .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.gridView .title {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    width: 90%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.gridView .shortTitle {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 13px;
+    height: 20px;
+    overflow: hidden;
+    width: calc(100% - 90px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.gridView .date {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.gridPopup {
+    z-index: 9999;
+    max-width: 95% !important;
+    border: 2px solid #0087be !important;
+}
+
+#dialog2 {
+    overflow: auto;
+    height: 400px !important;
+}
+
+.table-responsive {
+    overflow-x: auto !important;
+    width: 100%;
+    float: left;
+    margin-top: -10px;
+    overflow-y: hidden;
+}
+
+.dropdown-custom {
+    transform: translateY(-50%);
+    z-index: 99;
+}
+
+.dropdown-custom dd,
+.dropdown-custom dt {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-custom ul {
+    margin: -1px 0 0;
+}
+
+.dropdown-custom dd {
+    position: relative;
+}
+
+.dropdown-custom a,
+.dropdown-custom a:visited {
+    color: #fff;
+    font-size: 12px;
+    outline: medium none;
+    text-decoration: none;
+}
+
+.dropdown-custom dt a {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    margin-top: -8px;
+    overflow: hidden;
+    padding: 4px 20px 4px 10px;
+    width: calc(100% - 30px);
+}
+
+.dropdown-custom dt a span,
+.multiSel span {
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 3px 2px 0;
+    text-shadow: none !important;
+}
+
+.dropdown-custom dd ul {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    height: auto;
+    left: 1px;
+    list-style: outside none none;
+    overflow: auto;
+    padding: 2px 15px 2px 5px;
+    position: absolute;
+    top: 28px;
+    width: calc(100% - 20px);
+}
+
+.dropdown-custom dd ul li input {
+    margin-right: 10px !important;
+    margin-top: -2px !important;
+}
+
+.dropdown-custom span.value {
+    display: none;
+}
+
+.moreOption .inputBox.inline {
+    width: calc(25% - 18px);
+}
+
+.moreOption .inputBox.inline select {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    display: block;
+    height: 34px;
+    line-height: 24px;
+    margin-top: -8px;
+    padding: 4px 20px 4px 10px;
+    width: 100%;
+}
+
+table input[type="radio"] {
+    margin-top: 12px;
+}
+
+#example_length,
+#example_filter {
+    display: none;
+}
+
+.withDownBtn a {
+    background: none;
+    color: #009AE5 !important;
+    font-size: 8px;
+    position: absolute;
+    right: -30px;
+    top: -5px;
+}
+
+.dataTables_length {
+    position: absolute;
+    top: -36px;
+    left: 45px;
+    z-index: 999;
+}
+
+.custom-field-div .control-group {
+    display: inline-block;
+    margin: 0px 10px 10px;
+    width: calc(25% - 20px);
+    float: left;
+    min-height: 70px;
+}
+.custom-field-div .control-group .control-group {
+	margin: 0px !important;
+    width: 100% !important;	
+}
+
+.custom-field-div .control-group:nth-child(4n) {
+    clear: right;
+}
+
+.custom-field-div .control-group textarea {
+    height: 24px !important;
+}
+
+.custom-field-div .control-group select {
+    width: 100%;
+    display: block;
+}
+
+.containDiv .select2-selection {
+    max-width: unset;
+}
+
+.mainBody .uploaderinput>input[type="text"] {
+    width: calc(100% - 50px) !important;
+    float: left;
+}
+
+.keyValue .jsgrid-filter-row,
+.manageallcolumn .jsgrid-filter-row,
+.manageallcolumn .jsgrid-insert-row {
+    display: none !important;
+}
+
+
+/*if filter needs thne remove this CSS*/
+
+.manageallcolumn .jsgrid-header-row th {
+    color: #333 !important;
+}
+
+.keyValue .jsgrid-header-row .jsgrid-header-cell {
+    background: #3398cc !important;
+    padding: .75rem !Important;
+}
+
+jsgrid-header-row .jsgrid-header-cell:last-child {
+    text-align: center !important;
+}
+
+.keyValue .jsgrid-insert-row td {
+    vertical-align: top;
+    background: none !important;
+}
+
+.keyValue .jsgrid-insert-row td input[type="text"] {
+    width: 100% !important;
+    display: block;
+    max-width: unset !important;
+    height: 36px !important;
+}
+
+.keyValue .jsgrid-nodata-row td {
+    . text-align: center !important;
+    padding: 10px 0px;
+}
+
+.doc-list {
+    background-color: #D3E8F1;
+    border-color: #38F;
+    color: #047;
+    text-shadow: 1px 1px #FFF;
+    position: relative;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    padding: 5px;
+    max-width: 310px;
+    height: 20px;
+    margin-right: 15px;
+}
+
+.doc-list>div {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
+    white-space: nowrap;
+}
+
+.doc-list .select-btn {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 10px;
+    height: 10px;
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+.select-btn {
+    background-image: url(../images/close.png);
+}
+
+.gridEntries,
+.gridSortfeild,
+.gridSortby {
+    position: relative;
+    z-index: 999;
+}
+
+.gridView .gridSortfeild,
+.gridView .gridSortfeild label,
+.gridView .gridSortfeild select,
+.gridView .gridEntries,
+.gridView .gridEntries select,
+.gridView .gridEntries label,
+.gridView .gridSortby,
+.gridView .gridSortby img {
+    display: inline-block;
+}
+
+.gridView .gridSortby img {
+    width: 22px;
+    margin: 0px 10px;
+}
+
+.gridEntries {
+    margin-left: 40px;
+}
+
+.gridView {
+    position: relative;
+    top: -36px;
+}
+
+.gridActive.moreOption .inputBox.inline:nth-child(1),
+.gridActive.moreOption .inputBox.inline:nth-child(2) {
+    width: calc(25% - 21px);
+}
+
+a.paginate_button {
+    margin: 5px;
+}
+
+.profile span {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.profile h3 {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.abstractDiv .inline-detail:last-child label {
+    width: 100%;
+}
+
+.inline-detail {
+    display: block;
+    margin-bottom: 10px;
+    clear: both;
+}
+
+.inline-detail label {
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: bold !important;
+    float: left;
+    cursor: text !important;
+}
+
+.gridNoData {
+    text-align: center;
+    padding: 10px 0px;
+    background: #e7e7e7;
+    border: 1px solid #ccc;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.oneRowDiv .select2-container {
+    max-width: 375px !important;
+}
+
+
+/** JS Grid Issue Fix For Edit Case **/
+
+.jsgrid-table {
+    width: 100% !important;
+}
+
+
+/** Admin Accordian Name Bold **/
+
+.admin_accordion_prefix {
+    font-weight: bold;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.btn-primary+select {
+    width: calc(100% - 70px);
+}
+
+.ui-dialog.gridPopup,
+.ui-dialog.listPopup {
+    min-height: 400px;
+}
+
+.ui-dialog.gridPopup .ui-dialog-content,
+.ui-dialog.listPopup .ui-dialog-content {
+    width: 95% !important;
+    overflow-y: scroll;
+    min-height: 370px !important;
+}
+
+.dataTables_length select {
+    width: 70px;
+}
+
+.mainBody label:hover {
+    cursor: default;
+}
+
+.jsgrid-nodata-row td {
+    text-align: center;
+}
+
+.keyValue .jsgrid-header-row th:last-child {
+    text-align: center !important;
+}
+
+.checkboxcustom input {
+    margin-top: -4px;
+}
+
+.gridEntries,
+.gridSortfeild {
+    width: 130px;
+}
+
+.gridEntries select,
+.gridSortfeild select {
+    width: calc(100% - 60px);
+}
+
+.table-bordered {
+    border: none !important;
+}
+
+.addFileBtn:hover {
+    cursor: pointer;
+}
+
+.deeteIcon {
+    color: #cc0404 !important;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+.moreOption .inputBox.inline:last-child {
+    width: calc(27% - 12px) !important;
+    text-align: left;
+}
+.moreOption > .pull-right {
+    width: 100%;
+    text-align: right;
+}
+.inputBox.inline.withDownBtn:last-child{
+	margin-right:25px !important;
+}
+.dotsbtn{    float: right;
+    margin-top: -9px;
+    margin-right: 5px;
+    width: 30px;
+    height: 20px;}
+.dropdown-popup {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    text-align:left;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 4px 16px;
+    text-decoration: none;
+    display: block;
+    margin-left:0px;
+    font-size: 16px;
+}
+.dropdown-content a i{
+		margin-right:10px;
+}
+.dropdown-content.show{
+	z-index: 999999;
+    top: 18px;
+    right: 0px;
+    display:block;
+}
+
+@media ( min-width:768px) {
+    .inputBox.inline:last-child {
+        margin-right: 0px !important;
+        width: calc(52% - 18px);
+    }
+}
+
+@media print {
+    @page label {
+        margin-right: 10px;
+        font-weight: bold !important;
+        font-size: 30px;
+    }
+}
+
+@media ( max-width:1920px) {}
+
+@media ( max-width:1600px) {}
+
+@media ( max-width:1366px) {}
+
+@media ( max-width:1280px) {
+    .uploaderinput>span {
+        right: -5px;
+    }
+    .mainuploader {
+        top: 2px;
+    }
+}
+
+@media ( max-width:1170px) {
+    .listPopup.ui-dialog {
+        left: 0px !important;
+        right: 0px !important;
+        margin: auto;
+    }
+}
+
+@media ( max-width:1024px) {
+    .moreOption {
+        float: right;
+        width: calc(80% - 50px);
+    }
+    .dropdown-custom dt a {
+        width: calc(100% - 25px) !important;
+    }
+    .dropdown-custom dd ul {
+        width: calc(100% - 25px) !important;
+    }
+    .gridEntries,
+    .gridSortfeild {
+        width: 120px;
+    }
+    .gridEntries select,
+    .gridSortfeild select {
+        width: 60px;
+    }
+}
+
+@media ( max-width:992px) {
+    .mainDiv,
+    .tabcontent {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .gridEntries {
+        padding-left: 0px !important;
+    }
+    .inputBox.inline:last-child {
+    	margin-right: 0px !important;
+    	width: calc(52% - 13px);
+	}
+    .moreOption .inputBox.inline:last-child {
+    margin-right: 7px !important;
+    width: calc(50% - 25px) !important;
+	}
+	.gridActive.moreOption{margin-right:15px;}
+}
+
+@media ( max-width:768px) {
+    .col3 {
+        width: calc(50% - 30px);
+        padding: 0px 15px;
+        float: left;
+        margin-bottom: 15px;
+    }
+    .custom-field-div .control-group {
+        display: inline-block;
+        margin: 0px 15px !important;
+        width: calc(50% - 30px) !important;
+        float: left;
+    }
+    .moreOption {
+	    float: right;
+	    width: calc(75% - 45px);
+	}
+	.col75{
+		width: calc(90% - 30px);
+	}
+	.bgcolor + .col3 {
+	    width: calc(10% - 30px);
+	    margin-top: 20px;
+	}
+}
+
+@media ( max-width:767px) {
+    .col40 {
+        width: calc(100% - 30px);
+        padding: 0px 15px;
+        float: left;
+        margin-bottom: 15px;
+    }
+    .col50 {
+        width: calc(100% - 30px);
+        padding: 0px 15px;
+        float: left;
+        margin-bottom: 15px;
+    }
+    .col60 {
+        width: calc(100% - 30px);
+        padding: 0px 15px;
+        float: left;
+        margin-bottom: 15px;
+    }
+    .col3 {
+        width: calc(50% - 30px);
+        padding: 0px 15px;
+        float: left;
+        margin-bottom: 15px;
+    }
+    input[type="text"],
+    .select2-selection {
+        max-width: 100%;
+    }
+    .resetfilter {
+        position: absolute;
+        right: 32px;
+        top: auto;
+        color: #0087be;
+        bottom: -25px;
+    }
+    .gridPopup.ui-dialog,
+    .listPopup.ui-dialog {
+        width: 90% !important;
+        max-width: unset !important;
+        height: 50% !important;
+        margin: auto;
+        top: 0px !important;
+        bottom: 0px !important;
+        position: fixed !important;
+        max-height: 470px;
+    }
+    .inputBox.inline {
+        width: calc(100% - 30px);
+        margin-left: 15px;
+    }
+    .mainBody input[type="text"] {
+        max-width: unset !important;
+    }
+    .moreOption .inputBox.inline {
+    width: calc(98% - 30px) !important;
+    margin-bottom: 10px;
+    float: left;
+}
+    .moreOption .pull-right {
+        float: none !important;
+    }
+    .dropdown-custom {
+        margin-left: 0px !important;
+        z-index: 999;
+    }
+    .dropdown-custom dt a {
+        width: 90% !important;
+    }
+    .gridView {
+        top: 15px !important;
+    }
+    .gridEntries select,
+    .gridSortfeild select {
+        width: calc(100% - 75px);
+    }
+    .gridSortby {
+        position: absolute !important;
+        right: 10px;
+        text-align: right;
+        width: 30px !important;
+        top: 3px;
+    }
+    .table-div {
+        margin-top: 5px !important;
+    }
+    .dataTables_length {
+        left: auto;
+        right: 5px !important;
+        width: 200px;
+    }
+    .dropdown-custom dt a {
+        width: calc(100% - 33px) !important;
+    }
+    .table_option {
+        z-index: 9999;
+    }
+    .table_option>a {
+        bottom: -50px;
+        position: absolute;
+        left:0px;
+    }
+    .moreOption {
+        width: 100%;
+    }
+    .moreOption .inputBox.inline:last-child {
+	    margin-right: 20px !important;
+	    width: calc(97% - 23px) !important;
+	}
+	.gridActive.moreOption{margin-right:0px;}
+	
+	.bgcolor {
+	    background: #f7f7f7;
+	    padding: 20px 15px 30px 15px !important;
+	}
+	.col75{width:calc(100% - 30px);}
+	.bgcolor + .col3 {
+	    width: 50px;
+	    margin-top: -40px;
+	    margin-bottom: -70px;
+	    position: relative;
+	    top: 36px;
+	}
+	.bgcolor .inputBox.inline {
+	    width: calc(100% - 18px);
+	}
+	.searchDiv {
+	    padding-bottom: 10px;
+	}
+	.resetfilter {
+	    position: absolute;
+	    right: 38px;
+	    top: auto;
+	    color: #0087be;
+	    bottom: 7px;
+	}
+}
+
+@media ( max-width:480px) {
+    .col3 {
+        width: calc(100% - 30px);
+        padding: 0px 15px;
+        float: left;
+        margin-bottom: 15px;
+    }
+    ul.tab li a {
+        padding: 6px 10px;
+        min-width: unset;
+        font-size: 14px;
+    }
+    .moreOption .inputBox.inline {
+    	width: calc(95% - 30px) !important;
+    	margin-bottom: 10px;
+    	float: left;
+    	margin-left:0px;
+	}
+    .dataTables_length select {
+        width: 100px !important;
+    }
+    .custom-field-div .control-group {
+        display: inline-block;
+        margin: 0px 15px !important;
+        width: calc(100% - 30px) !important;
+    }
+    .gridEntries,
+    .gridSortfeild {
+        width: 100px !important;
+    }
+    .gridEntries select,
+    .gridSortfeild select {
+        width: calc(100% - 55px);
+    }
+    body {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .table_option {
+        padding-left: 15px;
+    }
+    .moreOption .inputBox.inline:last-child {
+	    margin-right: 20px !important;
+	    width: calc(94% - 23px) !important;
+	}
+}
+
+@media ( max-width:360px) {
+    ul.tab li {
+        margin-right: 5px;
+    }
+    ul.tab li a {
+        padding: 6px 10px;
+        min-width: unset;
+        font-size: 13px;
+    }
+}
+
+input.hasError[type="text"],
+textarea.hasError,
+.select2.hasError .select2-selection,
+select.hasError {
+    border: 1px solid red !important;
+}
+
+select.select2.hasError {
+    border: 1px solid #c8c8c8 !important;
+}
+
+.morecontent span {
+    display: none;
+}
+
+.morelink {
+    display: inline-block;
+}
+
+.listView td .actions {
+    width: 80px;
+}
+
+.searchDiv input[type='text'] {
+    padding-right: 50px !important;
+    width: calc(100% - 60px) !important;
+}
+
+#summariesDiv, #administrationDiv, #addTitleDiv{padding-left:0px !important; padding-right:0px !important;}
+
+.keyValue.jsgrid .jsgrid-mode-button {
+    width: 25px!important;
+    height: 24px;
+    background-position: 3px -211px;
+    background-size: 100% auto;
+    opacity: 1 !important;
+}
+.inline-box {
+	display: inline-block;
+	vertical-align: middle;
+}
+.bgcolor{
+	background:#f7f7f7;
+	padding: 20px 15px 0px 15px;
+}
+.bgcolor + .col3 .inputBox.inline{
+	width:100%;
+}
+
+.topSection legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 0px !important;
+    font-size: 21px;
+    line-height: 40px;
+    color: #333;
+    border: 0;
+    border-bottom: none !important;
+    width: 68px;
+    margin-left: 15px;
+}
+
+.topSection fieldset{border:1px solid #999; margin:0px;}
+.topSection .select2-selection{max-width:100%;}
